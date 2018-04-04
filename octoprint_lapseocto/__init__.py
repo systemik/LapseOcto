@@ -19,7 +19,7 @@ import os
 import string
 import octoprint.plugin
 
-class OctoprintLaspseOctoPlugin(octoprint.plugin.AssetPlugin,
+class OctoprintLapseOctoPlugin(octoprint.plugin.AssetPlugin,
 							octoprint.plugin.SettingsPlugin,
 							octoprint.plugin.ShutdownPlugin,
 							octoprint.plugin.StartupPlugin,
