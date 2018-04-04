@@ -1,0 +1,24 @@
+<h4>{{ _('Octoprint LapseOcto Configuration') }}</h4>
+
+<br />
+
+<form class="form-horizontal">
+
+<div class="control-group">
+    <label class="control-label" for="message">MXXX message to watch for:</label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.OctoprintLapseOcto.message">
+        </div>
+    </div>
+    <label class="control-label" for="cameraurl">Camera url:</label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.OctoprintLapseOcto.cameraurl">
+        </div>
+    </div>
+</div>
+
+</form>
+You need to add the require MXXX command in your gcode or type it directly in the octoprint terminal.
+<br />
