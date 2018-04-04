@@ -19,7 +19,7 @@ import os
 import string
 import octoprint.plugin
 
-class OctoprintLaspseOctoPlugin(octoprint.plugin.AssetPlugin,
+class OctoprintLapseOctoPlugin(octoprint.plugin.AssetPlugin,
 							octoprint.plugin.SettingsPlugin,
 							octoprint.plugin.ShutdownPlugin,
 							octoprint.plugin.StartupPlugin,
@@ -41,7 +41,7 @@ class OctoprintLaspseOctoPlugin(octoprint.plugin.AssetPlugin,
 		self._logger.info("LapseOcto camera url defined as %s" % (self._settings.get(['cameraurl'])))
 		message = self._settings.get(['message'])
 		cameraurl = self._settings.get(['cameraurl'])
-        if gcode and cmd.startswith(message):
+		if gcode and cmd.startswith(message):
 			self._logger.debug(u"LapseOcto message Detected: %s" % (cmd,))
 			command = "wget " + cameraurl
 			returned_value = os.system(command)  # returns the exit code in unix
