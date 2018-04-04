@@ -31,6 +31,7 @@ class OctoprintLaspseOctoPlugin(octoprint.plugin.AssetPlugin,
 	def on_after_startup(self):
 		self._logger.debug(u"OctoprintLapseOcto Startup")
 		message = self._settings.get(['message'])
+		cameraurl = self._settings.get(['cameraurl'])
 
 	def on_shutdown(self):
 		self._logger.debug(u"OctoprintLapseOcto Shutdown")
@@ -39,9 +40,10 @@ class OctoprintLaspseOctoPlugin(octoprint.plugin.AssetPlugin,
 		self._logger.info("LapseOcto command defined as %s" % (self._settings.get(['message'])))
 		self._logger.info("LapseOcto camera url defined as %s" % (self._settings.get(['cameraurl'])))
 		message = self._settings.get(['message'])
+		cameraurl = self._settings.get(['cameraurl'])
         if gcode and cmd.startswith(message):
 			self._logger.debug(u"LapseOcto message Detected: %s" % (cmd,))
-			command = "wget " + cmd
+			command = "wget " + cameraurl
 			returned_value = os.system(command)  # returns the exit code in unix
 			self._logger.debug(u"returned value: %s" % (command,))
 
